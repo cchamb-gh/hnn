@@ -11,9 +11,19 @@
     2. pendulum
     3. orbiting bodies
 
+In the simplest form, it's a system of one-dimensional movement of a mass. 
+
+The function H(p, q) is the total energy of the system, which is the sum of kinetic and potential energy.
+
+$H(q, p)$
+
+## Quick Overview of Phase Space Plots
+
+https://www.youtube.com/watch?v=TtDIz0j4oZc&t=176s
+
 ## What is a Hamiltonian Neural Network
 
-A HNN 
+A HNN is a neural network where we 
 
 
 two coordinates: time and position can predict position for any future or
@@ -76,3 +86,16 @@ would be bad at because of what it assumes, and why.*
 
 Full credit if: A specific kind of data or task, and why the network's
 assumption hurts there.
+
+
+
+
+References:
+Pendulum 30deg.gif, Lucas Vieira, Public domain, via Wikimedia Commons
+<a href="https://commons.wikimedia.org/wiki/File:Pendulum_30deg.gif">Lucas Vieira</a>, Public domain, via Wikimedia Commons
+
+Mass Spring Animación1.gif, AlvaroLopez12, CC BY-SA 4.0, via Wikimedia Commons
+<a href="https://commons.wikimedia.org/wiki/File:Animaci%C3%B3n1.gif">AlvaroLopez12</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+
+Orbit2.gif, Zhatt, Public domain, via Wikimedia Commons
+<a href="https://commons.wikimedia.org/wiki/File:Orbit2.gif">Zhatt</a>, Public domain, via Wikimedia Commons
