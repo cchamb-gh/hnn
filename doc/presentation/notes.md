@@ -58,6 +58,9 @@ Full credit if You explain how gradients flow through the symmetry-creating
 component and what weight sharing does to the gradients.
 
 ## Initialialization 
+
+TODO Clay: lookup why nn_models.py:MLP uses orthogonal_(l.weight) initialization
+
 *How is the network initialized? If it's the standard recipe, say so and move
 on; if the symmetric component changes the picture, show how.*
 
@@ -99,3 +102,14 @@ Mass Spring Animación1.gif, AlvaroLopez12, CC BY-SA 4.0, via Wikimedia Commons
 
 Orbit2.gif, Zhatt, Public domain, via Wikimedia Commons
 <a href="https://commons.wikimedia.org/wiki/File:Orbit2.gif">Zhatt</a>, Public domain, via Wikimedia Commons
+
+
+
+
+
+
+--------------------------
+$\frac{d\textbf{p}}{dt} = -\frac{\partial H}{\partial \textbf{q}}$
+
+$\frac{d\textbf{q}}{dt} = \frac{\partial H}{\partial \textbf{p}},$
+
