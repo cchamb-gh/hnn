@@ -1,3 +1,5 @@
+
+
 import torch
 from torch import nn
 import numpy as np
@@ -10,13 +12,27 @@ NONLINEARITY = 'tanh'
 TOTAL_STEPS = 2000
 FIELD_TYPE = 'solenoidal'
 
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 
 class BaselineMLP(nn.Module):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, input_dim=INPUT_DIM, hidden_dim=HIDDEN_DIM, output_dim=INPUT_DIM):
+        super(BaselineMLP, self).__init__()
+        self.linear1 = nn.Linear(input_dim, hidden_dim)
+        self.linear2 = nn.Linear(hidden_dim, hidden_dim)
+        self.linear3 = nn.Linear(hidden_dim, output_dim, bias=None)
 
-    def forward(self, x):
-        return x
+        for l in [self.linear1, self.linear2, self.linear3]:
+            nn.init.orthogonal_(l.weight) # use a principled initialization
+        
+        self.nonlinearity = torch.tanh
+
+
+    def forward(self, x, separate_fields=False):
+        h = self.nonlinearity(self.linear1(x))
+        h = self.nonlinearity(self.linear2(h))
+        return self.linear3(h)
+
 
 
 class HNN(torch.nn.Module):
@@ -99,4 +115,4 @@ def load_model(kind):
     elif kind == "symmetric":
         model = HNN(baseline=False)
 
-    return model
+    return model.to(DEVICE)

@@ -113,3 +113,11 @@ $\frac{d\textbf{p}}{dt} = -\frac{\partial H}{\partial \textbf{q}}$
 
 $\frac{d\textbf{q}}{dt} = \frac{\partial H}{\partial \textbf{p}},$
 
+
+
+TODOs:
+[ ] add header to each source file giving credit to Greydanus
+[ ] add gen AI notices to slide deck
+[ ] add loss curves
+[ ] train baseline and HNN models and save weights in github repo
+[ ] load model from saved weights

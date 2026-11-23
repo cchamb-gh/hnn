@@ -7,6 +7,8 @@ import torch
 
 solve_ivp = scipy.integrate.solve_ivp
 
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 
 def hamiltonian_fn(coords: torch.Tensor) -> torch.Tensor:
     """Computes the Hamiltonian H = p^2 + q^2 for a batch or single state."""
@@ -129,5 +131,12 @@ def get_field(
     }
 
 def spring_data():
+    """Return some sample data from the ideal mass-spring experiment.
+
+    Normally, this would be a subset of training data, but we have only 750 rows
+    by default, so we just return all of it.
+    """
+    
     full_dataset = get_dataset()
-    return(torch.tensor(full_dataset['x'], dtype=torch.float32))
+    x = torch.tensor(full_dataset['x'], dtype=torch.float32).to(DEVICE)
+    return x
