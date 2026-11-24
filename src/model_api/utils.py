@@ -1,3 +1,6 @@
+# Hamiltonian Neural Networks (Modernized)
+# Original: Sam Greydanus, Misko Dzamba, Jason Yosinski (2019)
+
 from .data import spring_data
 
 def sample_batch():
