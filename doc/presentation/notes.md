@@ -118,7 +118,7 @@ $\frac{d\textbf{q}}{dt} = \frac{\partial H}{\partial \textbf{p}},$
 TODOs:
 [ ] Clay add header to each source file giving credit to Greydanus
 [ ] Clay add gen AI disclosure to slide deck
-[~] Clay add loss curves
+[X] Clay add loss curves
 [X] train baseline and HNN models and save weights in github repo
 [X] Clay load model from saved weights
 [ ] Taylor slide: architecture
