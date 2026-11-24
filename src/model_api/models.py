@@ -37,11 +37,13 @@ class BaselineMLP(nn.Module):
 
 class HNN(torch.nn.Module):
     '''Learn arbitrary vector fields that are sums of conservative and solenoidal fields'''
-    def __init__(self, input_dim=INPUT_DIM, differentiable_model=BaselineMLP(), field_type='solenoidal',
+    def __init__(self, input_dim=INPUT_DIM, differentiable_model=None, field_type='solenoidal',
                  baseline=False, assume_canonical_coords=True):
         super(HNN, self).__init__()
         self.baseline = baseline
-        self.differentiable_model = differentiable_model
+        self.differentiable_model = (
+            differentiable_model if differentiable_model is not None else BaselineMLP(input_dim=input_dim)
+        )
         self.assume_canonical_coords = assume_canonical_coords
         self.register_buffer("M", self.permutation_tensor(input_dim))
         self.field_type = field_type

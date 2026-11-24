@@ -31,3 +31,9 @@ This repo only models the ideal mass-spring experiment from the Greydanus paper.
 
     python -m model_api.test_models
 
+### Symmetry Test & Data-Efficiency Evaluation
+
+    python -m model_api.evaluate
+    python -m model_api.plot_results
+
+
