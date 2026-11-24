@@ -116,10 +116,14 @@ $\frac{d\textbf{q}}{dt} = \frac{\partial H}{\partial \textbf{p}},$
 
 
 TODOs:
-[ ] add header to each source file giving credit to Greydanus
-[ ] add gen AI disclosure to slide deck
-[ ] add loss curves
-[ ] train baseline and HNN models and save weights in github repo
-[ ] load model from saved weights
-[ ] create HPC script
-[ ] document HPC script in the README.md
+[ ] Clay add header to each source file giving credit to Greydanus
+[ ] Clay add gen AI disclosure to slide deck
+[~] Clay add loss curves
+[X] train baseline and HNN models and save weights in github repo
+[ ] Clay load model from saved weights
+[ ] Clay create HPC script
+[ ] Clay document HPC script in the README.md
+[ ] Taylor slide: architecture
+[ ] Taylor slide: backward pass
+[ ] Taylor slide: impact of architecture
+[ ] Taylor slide: cost of bias
