@@ -15,7 +15,7 @@ This repo only models the ideal mass-spring experiment from the Greydanus paper.
 
 ### Installation
 
-    pip install git@github.com/cchamb-gh/hnn
+    pip install git+https://github.com/cchamb-gh/hnn
 
 ### Training
 
