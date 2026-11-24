@@ -10,6 +10,7 @@ import torch
 from model_api.data import get_dataset
 from model_api.models import HNN
 from model_api.models import BaselineMLP
+from model_api.utils import L2_loss
 
 # Model and Training Constants
 PACKAGE_DIR = Path(__file__).resolve().parent
@@ -73,8 +74,7 @@ def train(args: argparse.Namespace) -> tuple[HNN, dict[str, list[float]]]:
         optim.zero_grad(set_to_none=True)
 
         dxdt_hat = model.time_derivative(x)
-        criterion = torch.nn.MSELoss()
-        loss = criterion(dxdt, dxdt_hat)
+        loss = L2_loss(dxdt, dxdt_hat)
         loss.backward()
         optim.step()
 
@@ -83,7 +83,7 @@ def train(args: argparse.Namespace) -> tuple[HNN, dict[str, list[float]]]:
         # requires autograd to compute gradients of the Hamiltonian with respect to test_x.
         model.eval()
         test_dxdt_hat = model.time_derivative(test_x)
-        test_loss = criterion(test_dxdt, test_dxdt_hat)
+        test_loss = L2_loss(test_dxdt, test_dxdt_hat)
 
         # Logging
         stats["train_loss"].append(loss.item())

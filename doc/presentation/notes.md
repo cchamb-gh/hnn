@@ -120,9 +120,7 @@ TODOs:
 [ ] Clay add gen AI disclosure to slide deck
 [~] Clay add loss curves
 [X] train baseline and HNN models and save weights in github repo
-[ ] Clay load model from saved weights
-[ ] Clay create HPC script
-[ ] Clay document HPC script in the README.md
+[X] Clay load model from saved weights
 [ ] Taylor slide: architecture
 [ ] Taylor slide: backward pass
 [ ] Taylor slide: impact of architecture

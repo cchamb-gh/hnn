@@ -1,4 +1,4 @@
-
+from importlib.resources import files
 
 import torch
 from torch import nn
@@ -54,9 +54,6 @@ class HNN(torch.nn.Module):
     def forward(self, x):
         # Both baseline and symmetric now return the vector field tensor [batch_size, input_dim]
         return self.time_derivative(x)
-
-    def rk4_time_derivative(self, x, dt):
-        return rk4(fun=self.time_derivative, y0=x, t=0, dt=dt)
 
     def time_derivative(self, x, t=None, separate_fields=False):
         '''NEURAL ODE-STYLE VECTOR FIELD'''
@@ -114,5 +111,12 @@ def load_model(kind):
         model = HNN(baseline=True)
     elif kind == "symmetric":
         model = HNN(baseline=False)
+
+    weight_resource = files("model_api").joinpath(f"weights/{kind}.pt")
+    if weight_resource.is_file():
+        print(f"loading {kind} from saved weights {str(weight_resource)}")
+        with weight_resource.open("rb") as f:
+            state_dict = torch.load(f, map_location=DEVICE, weights_only=True)
+        model.load_state_dict(state_dict)
 
     return model.to(DEVICE)

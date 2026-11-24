@@ -138,5 +138,5 @@ def spring_data():
     """
     
     full_dataset = get_dataset()
-    x = torch.tensor(full_dataset['x'], dtype=torch.float32).to(DEVICE)
+    x = torch.tensor(full_dataset['test_x'], dtype=torch.float32).to(DEVICE)
     return x
