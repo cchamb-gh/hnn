@@ -1,5 +1,28 @@
-# hnn
-AI-5200 Deep Learning: Project 2 - Hamiltonian NNs
+# AI 5200 - Project 2 - Hamiltonian Neural Networks
+======
+#### Taylor Turner and Clay Chambers
+
+Based directly on the paper [Hamiltonian Neural Networks (2019)](https://arxiv.org/abs/1906.01563v3) by Greydanus et al and the accompanying source code [https://github.com/greydanus/hamiltonian-nn](https://github.com/greydanus/hamiltonian-nn).
 
 
-A README saying what the project is and how to install, train (on the HPC) and reproduce your results, with the actual commands.
+## Overview
+------------
+Hamiltonian Neural Networks are neural networks modified to work with harmonic systems of motion where energy is conserved. The network can learn the function giving the Hamiltonian $H(q, p)$ where q represents position and p represents momentum. HNNs are an improvement over baseline MLPs since they strictly conserve energy whereas a baseline MLP would tend to drift over time.
+
+## Installation and Usage
+-------------
+
+### Installation
+    pip install git@github.com/cchamb-gh/hnn
+
+### Training
+Train the baseline model
+    python -m model_api.train --baseline --verbose
+
+Train the HNN model
+    python -m model_api.train --verbose
+
+### Testing
+
+    python -m model_api.test_models
+
