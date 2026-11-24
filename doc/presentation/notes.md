@@ -117,7 +117,9 @@ $\frac{d\textbf{q}}{dt} = \frac{\partial H}{\partial \textbf{p}},$
 
 TODOs:
 [ ] add header to each source file giving credit to Greydanus
-[ ] add gen AI notices to slide deck
+[ ] add gen AI disclosure to slide deck
 [ ] add loss curves
 [ ] train baseline and HNN models and save weights in github repo
 [ ] load model from saved weights
+[ ] create HPC script
+[ ] document HPC script in the README.md
